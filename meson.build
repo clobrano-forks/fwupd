@@ -184,6 +184,8 @@ if host_machine.system() == 'windows'
   installed_test_bindir = get_option('libexecdir')
   installed_test_datadir = get_option('datadir')
   daemon_dir = get_option('libexecdir')
+  implied_gpg = '0'
+  implied_pkcs7 = '1'
 else
   datadir = join_paths(prefix, get_option('datadir'))
   sysconfdir = join_paths(prefix, get_option('sysconfdir'))
@@ -191,6 +193,8 @@ else
   installed_test_bindir = join_paths(libexecdir, 'installed-tests', meson.project_name())
   installed_test_datadir = join_paths(datadir, 'installed-tests', meson.project_name())
   daemon_dir = join_paths(libexecdir, 'fwupd')
+  implied_gpg = '1'
+  implied_pkcs7 = '1'
 endif
 mandir = join_paths(prefix, get_option('mandir'))
 localedir = join_paths(prefix, get_option('localedir'))

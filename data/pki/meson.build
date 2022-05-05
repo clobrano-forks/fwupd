@@ -3,8 +3,8 @@ if libjcat.type_name() != 'internal' and libjcat.version().version_compare('>= 0
   supported_gpg = libjcat.get_variable(pkgconfig : 'supported_gpg')
   supported_pkcs7 = libjcat.get_variable(pkgconfig : 'supported_pkcs7')
 else
-  supported_gpg = '1'
-  supported_pkcs7 = '1'
+  supported_gpg = implied_gpg
+  supported_pkcs7 = implied_pkcs7
 endif
 
 if supported_gpg == '1'
